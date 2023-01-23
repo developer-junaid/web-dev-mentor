@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+// Pages
+import FrontEnd from "pages/Frontend"
+import Fullstack from "pages/Fullstack"
+import Home from "./pages/Home"
+
+// Router
+import { createBrowserRouter, RouterProvider } from "react-router-dom"
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home />,
+  },
+  {
+    path: "/course/frontend",
+    element: <FrontEnd />,
+  },
+  {
+    path: "/course/fullstack",
+    element: <Fullstack />,
+  },
+])
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  return <RouterProvider router={router} />
 }
 
-export default App;
+export default App
