@@ -63,7 +63,7 @@ const BackEnd = () => {
               most out of it.
             </p>
             <div className="overflow-hidden bg-white shadow sm:rounded-md mt-8">
-              <ul role="list" className="divide-y divide-gray-200">
+              <ul className="divide-y divide-gray-200">
                 {backendLinks.map((link) => (
                   <LinkFeed
                     key={link.number}
