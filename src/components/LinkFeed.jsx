@@ -13,12 +13,17 @@ export const LinkFeed = ({
   imageUrl,
   name,
   channel,
-  stage,
+  languages,
   skills,
 }) => {
   return (
     <li>
-      <a href={href} target="_blank" className="block hover:bg-gray-50">
+      <a
+        href={href}
+        target="_blank"
+        className="block hover:bg-gray-50"
+        rel="noreferrer"
+      >
         <div className="flex items-center px-4 py-4 sm:px-6">
           <div className="flex min-w-0 flex-1 items-center">
             <div className="flex-shrink-0">
@@ -41,13 +46,26 @@ export const LinkFeed = ({
               </div>
               <div className="hidden md:block">
                 <div>
-                  <p className="text-sm text-gray-900">{skills}</p>
+                  <p className="text-sm text-gray-900">
+                    {skills?.map((skill) => (
+                      <span key={skill?.id}>
+                        &nbsp;
+                        {skill?.name} {skills?.length > 1 ? <span>|</span> : ""}
+                      </span>
+                    ))}
+                  </p>
                   <p className="mt-2 flex items-center text-sm text-gray-500">
                     <CheckCircleIcon
                       className="mr-1.5 h-5 w-5 flex-shrink-0 text-green-400"
                       aria-hidden="true"
                     />
-                    {stage}
+                    {languages?.map((language) => (
+                      <span key={language?.id}>
+                        &nbsp;
+                        {language?.name}
+                        {languages?.length > 1 ? <span>,</span> : ""}
+                      </span>
+                    ))}
                   </p>
                 </div>
               </div>

@@ -1,13 +1,23 @@
+import { useContext } from "react"
+
+// Components
 import { Nav } from "components"
 import { Banner } from "components/Banner"
 import { Footer } from "components/Footer"
 
 // Data
-import { collections } from "data"
+// import { collections } from "data"
 
+// Router
 import { Link } from "react-router-dom"
 
+// Context
+import { DataContext } from "context/DataContext"
+
 export default function Home() {
+  const { collections } = useContext(DataContext)
+  console.log(collections)
+
   return (
     <>
       <main className="bg-white">
@@ -64,10 +74,10 @@ export default function Home() {
             </p>
 
             <div className="mt-10 space-y-12 lg:grid lg:grid-cols-3 lg:gap-x-8 lg:space-y-0">
-              {collections.map((collection) => (
+              {collections?.map((collection) => (
                 <Link
-                  key={collection.name}
-                  to={collection.href}
+                  key={collection?._id}
+                  to={`/course/${collection?.slug?.current}`}
                   className="group block"
                 >
                   <div
@@ -75,16 +85,16 @@ export default function Home() {
                     className="aspect-w-3 aspect-h-2 overflow-hidden rounded-lg group-hover:opacity-75 lg:aspect-w-5 lg:aspect-h-6"
                   >
                     <img
-                      src={collection.imageSrc}
-                      alt={collection.imageAlt}
+                      src={collection?.image?.asset?.url}
+                      alt={collection?.name}
                       className="h-full w-full object-cover object-center"
                     />
                   </div>
                   <h3 className="mt-4 text-base font-semibold text-gray-900">
-                    {collection.name}
+                    {collection?.name}
                   </h3>
                   <p className="mt-2 text-sm text-gray-500">
-                    {collection.description}
+                    {collection?.description}
                   </p>
                 </Link>
               ))}

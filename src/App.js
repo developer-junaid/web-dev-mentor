@@ -1,10 +1,12 @@
 // Pages
-import FrontEnd from "pages/Frontend"
-import Fullstack from "pages/Fullstack"
 import Home from "./pages/Home"
+import Course from "pages/Course"
 
 // Router
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
+
+// Context
+import { DataContextProvider } from "context/DataContext"
 
 const router = createBrowserRouter([
   {
@@ -12,17 +14,17 @@ const router = createBrowserRouter([
     element: <Home />,
   },
   {
-    path: "/course/frontend",
-    element: <FrontEnd />,
-  },
-  {
-    path: "/course/fullstack",
-    element: <Fullstack />,
+    path: "/course/:slug",
+    element: <Course />,
   },
 ])
 
 function App() {
-  return <RouterProvider router={router} />
+  return (
+    <DataContextProvider>
+      <RouterProvider router={router} />
+    </DataContextProvider>
+  )
 }
 
 export default App

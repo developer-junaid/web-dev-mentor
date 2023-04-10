@@ -1,3 +1,28 @@
+/*
+
+Collections
+-------------
+{
+  name,
+  slug,
+  imageURL,
+  imageAlt,
+  description,
+  videos -> [
+    {
+      number: "String",
+      name: "String",
+      channel (select) -> {name, imageURL},
+      skills -> ["Str1", "Str2"],
+      languages -> ["lang1", "lang2"],
+      href: "https://developerjunaid.com"
+    }
+  ]
+}
+
+
+*/
+
 // Variables
 const images = {
   traversyMedia:
