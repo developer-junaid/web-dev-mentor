@@ -547,7 +547,7 @@ export const frontendLinks = [
     imageUrl: images.lamaDev,
     skills: "React.js",
     stage: "English",
-    href: "#https://youtu.be/7WwtzsSHdpI",
+    href: "https://youtu.be/7WwtzsSHdpI",
   },
   {
     number: "49",
@@ -576,15 +576,7 @@ export const frontendLinks = [
     stage: "English",
     href: "https://youtu.be/aTPkos3LKi8",
   },
-  {
-    number: "51",
-    name: "Build and Deploy a Fully Responsive Modern UI/UX Website in React JS",
-    channel: channels.jsm,
-    imageUrl: images.jsm,
-    skills: "React.js",
-    stage: "English",
-    href: "https://youtu.be/LMagNcngvcU",
-  },
+
   {
     number: "52",
     name: "Build and Deploy a Fully Responsive Restaurant Website with Modern UI and UX in ReactJS",
@@ -605,6 +597,15 @@ export const frontendLinks = [
   },
   {
     number: "54",
+    name: "Build and Deploy a Fully Responsive Modern UI/UX Website in React JS",
+    channel: channels.jsm,
+    imageUrl: images.jsm,
+    skills: "React.js",
+    stage: "English",
+    href: "https://youtu.be/LMagNcngvcU",
+  },
+  {
+    number: "55",
     name: "Build a COMPLETE React Admin Dashboard App | React, Material UI, Data Grid, Light & Dark Mode",
     channel: channels.developerJunaid,
     imageUrl: images.developerJunaid,
